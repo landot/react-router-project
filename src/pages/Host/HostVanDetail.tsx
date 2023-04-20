@@ -41,9 +41,11 @@ export default function VanDetail() {
                     vanData ? (
                         <div style={{
                             backgroundColor: '#FFFFFF',
-                            width: '100%',
+                            width: '75%',
+                            maxWidth: '1000px',
                             padding: '20px',
-                            margin: '25px'
+                            margin: '25px',
+                            borderRadius: '10px'
                         }}>
                             <div style={{
                                 display: 'grid',
