@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// Inter
 
 export default function Header() {
     return (
