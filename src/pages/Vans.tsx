@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Van from "./Van";
+import Van from "../components/Van";
 import { FILTERS } from "../constants.ts/vanFilters";
 
 export interface Van {

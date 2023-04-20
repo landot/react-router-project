@@ -1,13 +1,12 @@
+import "./server.js"
 import './App.css'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import About from './components/About';
-import Home from './components/Home';
+import About from './pages/About';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Vans from './components/Vans';
-import VanDetail from './components/VanDetail';
-
-import "./server.js"
+import Home from './pages/Home';
+import VanDetail from './pages/VanDetail';
+import Vans from './pages/Vans';
 
 function App() {
   return (
