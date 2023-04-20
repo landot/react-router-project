@@ -135,3 +135,33 @@ h1 {
     grid-gap: 1rem;
     justify-content: center;
   }
+
+  .host-nav {
+      text-decoration: none;
+      font-size: 16px;
+      color: #4D4D4D;
+      font-weight: 600;
+      margin-right: 20px;
+  }
+
+  .host-nav.selected {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #161616;
+  }
+
+.header-link {
+  text-decoration: none;
+  font-size: 16px;
+  color: #4D4D4D;
+  font-weight: 600;
+  margin-right: 20px;
+
+}
+
+.header-link.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
+}
+

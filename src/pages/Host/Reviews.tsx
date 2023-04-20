@@ -11,8 +11,8 @@ export default function Reviews() {
                 alignItems: 'center',
             }}>
                 <h1 style={{
-                    padding: '0 0 0 0',
-                    margin: '0 0 0 0'
+                    padding: '0',
+                    margin: '0'
                 }}>Your reviews</h1>
                 <span style={{
                     paddingTop: '10px',
@@ -24,8 +24,8 @@ export default function Reviews() {
                 alignItems: 'center'
             }}>
                 <h1 style={{
-                    padding: '0 0 0 0',
-                    margin: '0 0 0 0'
+                    padding: '0',
+                    margin: '0'
                 }}>5.0</h1>
                 <AiFillStar width='25px' color='#FF8C38' style={{
                     margin: '5px'
@@ -38,8 +38,6 @@ export default function Reviews() {
                 <ProgressBar stars='3' percent='5' bgcolor='#FF8C38'/>
                 <ProgressBar stars='2' percent='10' bgcolor='#FF8C38'/>
                 <ProgressBar stars='1' percent='0' bgcolor='#FF8C38'/>
-                {/* <ProgressBar completed='100' bgcolor='red'/>
-                <ProgressBar completed='100' bgcolor='red'/> */}
             </div>
         </div>
     )
