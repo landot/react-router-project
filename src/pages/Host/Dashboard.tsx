@@ -1,7 +1,19 @@
+import { useEffect, useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
 import ListedVan from '../../components/ListedVan';
+import { Van } from '../Vans/Vans';
 
 export default function Host() {
+    const [hostVanData, setHostVanData] = useState<Van[]>();
+
+    useEffect(() => {
+        fetch("/api/host/vans")
+            .then(res => res.json())
+            .then(data => {
+                setHostVanData(data.vans);
+            })
+    }, [])
+
     return (
         <div>
             <div className='welcome-section' style={{
@@ -61,9 +73,9 @@ export default function Host() {
                     <p>View all</p>
                 </div>
             </div>
-            <ListedVan />
-            <ListedVan />
-            <ListedVan />
+            {hostVanData && hostVanData.map(van => (
+                <ListedVan {...van}/> 
+            ))}
         </div>
     )
 }

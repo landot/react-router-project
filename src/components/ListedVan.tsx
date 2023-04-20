@@ -1,5 +1,5 @@
 
-export default function ListedVan() {
+export default function ListedVan(props: {name: string, price: number, imageUrl: string}) {
     return (
         <div style={{
             display: 'flex',
@@ -14,7 +14,7 @@ export default function ListedVan() {
                 display: 'flex',
                 alignItems: 'center',
             }}>
-                <img src="https://assets.scrimba.com/advanced-react/react-router/beach-bum.png" alt="van-image" style={{
+                <img src={props.imageUrl} alt="van-image" style={{
                     maxWidth: '65px',
                     borderRadius: '5px',
                     marginRight: '10px'
@@ -23,8 +23,8 @@ export default function ListedVan() {
                     display: 'inline',
                     float: 'right'
                 }}>
-                    <h5>Modest Explorer</h5>
-                    <p>$60 /day</p>
+                    <h5>{props.name}</h5>
+                    <p>${props.price} /day</p>
                 </div>
             </div>
             <p>Edit</p>
