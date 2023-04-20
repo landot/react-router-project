@@ -16,7 +16,7 @@ export default function VanDetail() {
 
     return (
         <div>
-            <Link to='/vans' style={{padding: '5px'}}>
+            <Link to='..' relative='path' style={{padding: '5px'}}>
                 <span style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
                     <AiOutlineLeft />
                     <p style={{color: '#201F1D', fontSize: '16px'}}>Back to all vans</p>

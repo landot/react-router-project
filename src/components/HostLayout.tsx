@@ -12,23 +12,23 @@ export default function HostLayout() {
             <nav style={{ fontFamily: 'Inter', padding: '25px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', backgroundColor: '#FFF7ED' }}>
                 <NavLink 
                     className='host-nav' 
-                    to='/host'
+                    to='.'
                     end
                     style={({isActive}) => isActive ? activeStyles : {}}
                 >Dashboard</NavLink>
                 <NavLink 
                     className='host-nav' 
-                    to='/host/income'
+                    to='income'
                     style={({isActive}) => isActive ? activeStyles : {}}
                 >Income</NavLink>
                 <NavLink 
                     className='host-nav' 
-                    to='/host/reviews'
+                    to='reviews'
                     style={({isActive}) => isActive ? activeStyles : {}}
                 >Reviews</NavLink>
                 <NavLink 
                     className='host-nav' 
-                    to='/host/vans'
+                    to='vans'
                     style={({isActive}) => isActive ? activeStyles : {}}
                 >Vans</NavLink>
             </nav>
