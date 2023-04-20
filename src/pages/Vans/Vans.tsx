@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import Van from "../components/Van";
-import { FILTERS } from "../constants.ts/vanFilters";
+import Van from "../../components/Van";
+import { FILTERS } from "../../constants.ts/vanFilters";
 
 export interface Van {
     id: string;
