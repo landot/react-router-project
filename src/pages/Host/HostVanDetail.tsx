@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
 import { AiOutlineLeft } from "react-icons/ai";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { Link, NavLink, Outlet, useOutletContext, useParams } from "react-router-dom";
 import { Van } from "../Vans/Vans";
 
 export default function VanDetail() {
     const params = useParams();
     const [vanData, setVanData] = useState<Van>();
+    
+    const activeStyles = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "#161616"
+    }
 
     useEffect(() => {
         fetch(`/api/host/vans/${params.id}`)
@@ -26,7 +32,7 @@ export default function VanDetail() {
                     <p style={{color: '#201F1D', fontSize: '16px'}}>Back to all vans</p>
                 </span>
             </Link>
-            <p>{JSON.stringify(vanData)}</p>
+            {/* <p>{JSON.stringify(vanData)}</p> */}
             <div style={{
                 display: 'flex',
                 justifyContent: 'center'
@@ -57,12 +63,24 @@ export default function VanDetail() {
                             <div className='van-detail-subheader' style={{
                                 display: 'flex'
                             }}>
-                                <p className='host-nav'>Details</p>
-                                <p className='host-nav'>Pricing</p>
-                                <p className='host-nav'>Photos</p>
+                                <NavLink 
+                                    to='.' end 
+                                    className='host-nav' 
+                                    style={({isActive}) => isActive ? activeStyles : {}}
+                                >Details</NavLink>
+                                <NavLink 
+                                    to='pricing' 
+                                    className='host-nav'
+                                    style={({isActive}) => isActive ? activeStyles : {}}
+                                >Pricing</NavLink>
+                                <NavLink 
+                                    to='photos' 
+                                    className='host-nav'
+                                    style={({isActive}) => isActive ? activeStyles : {}}
+                                >Photos</NavLink>
                             </div>
                             <div>
-                                <p>detail pricing and photos go here</p>
+                                <Outlet context={{vanData}}/>
                             </div>
                         </div>
                     ) : <p>Loading...</p>
@@ -70,4 +88,8 @@ export default function VanDetail() {
             </div>
         </div>
     )
+}
+
+export function useVanData() {
+    return useOutletContext<{vanData: Van}>();
 }

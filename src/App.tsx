@@ -8,10 +8,13 @@ import Vans from './pages/Vans/Vans';
 import Layout from "./components/Layout";
 import Income from "./pages/Host/Income";
 import Reviews from "./pages/Host/Reviews";
-import { default as HostVans } from "./pages/Host/Vans";
-import { default as HostVanDetail } from "./pages/Host/VanDetail";
+import HostVans from "./pages/Host/HostVans";
+import HostVanDetail  from "./pages/Host/HostVanDetail";
 import HostLayout from "./components/HostLayout";
 import Host from "./pages/Host/Dashboard";
+import HostVanPhotos from "./components/HostVanPhotos.js";
+import HostVanPricing from "./components/HostVanPricing.js";
+import HostVanDetailSection from "./components/HostVanDetailSection.js";
 
 function App() {
   return (
@@ -27,7 +30,11 @@ function App() {
             <Route path="income" element={<Income />}/>
             <Route path="reviews" element={<Reviews />}/>
             <Route path="vans" element={<HostVans />}/>
-            <Route path="vans/:id" element={<HostVanDetail />}/>
+            <Route path="vans/:id" element={<HostVanDetail />}>
+              <Route index element={<HostVanDetailSection/>}/>
+              <Route path='pricing' element={<HostVanPricing />}/>
+              <Route path='photos' element={<HostVanPhotos />}/>
+            </Route>
           </Route>
         </Route>
       </Routes>
