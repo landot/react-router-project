@@ -15,7 +15,8 @@ export default function ProgressBar(props: { stars: string, percent: string, bgc
     return (
         <div style={{
             display: 'flex',
-            alignItems: 'center'
+            alignItems: 'center',
+            justifyContent: 'center'
         }}>
             <p style={{
                 margin: '5px'
