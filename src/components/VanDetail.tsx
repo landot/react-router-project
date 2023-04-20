@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { AiOutlineLeft } from "react-icons/ai";
+import { Van } from "./Vans";
 
 export default function VanDetail() {
     const params = useParams();
-    const [vanData, setVanData] = useState(undefined);
+    const [vanData, setVanData] = useState<Van>();
     useEffect(() => {
         fetch(`/api/vans/${params.id}`)
             .then(res => res.json())
@@ -24,11 +25,11 @@ export default function VanDetail() {
             {
                 vanData ? (
                     <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', padding: '15px'}}>
-                        <img src={vanData?.imageUrl} alt="van-image" style={{width: '100%', padding: '20px', borderRadius: '25px'}}/>
-                        <button className={`van-style ${vanData?.type}`}>{vanData?.type}</button>
-                        <span style={{fontWeight: '700', fontSize: '32px'}}>{vanData?.name}</span>
-                        <span style={{fontSize: '24px'}}>{`$${vanData?.price} /day`}</span>
-                        <p style={{fontSize: '16px'}}>{vanData?.description}</p>
+                        <img src={vanData.imageUrl} alt="van-image" style={{width: '100%', padding: '20px', borderRadius: '25px'}}/>
+                        <button className={`van-style ${vanData.type}`}>{vanData.type}</button>
+                        <span style={{fontWeight: '700', fontSize: '32px'}}>{vanData.name}</span>
+                        <span style={{fontSize: '24px'}}>{`$${vanData.price} /day`}</span>
+                        <p style={{fontSize: '16px'}}>{vanData.description}</p>
                     </div>
                 ) : <h2>Loading</h2>
             }

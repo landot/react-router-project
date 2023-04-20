@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Van from "./Van";
 import { FILTERS } from "../constants.ts/vanFilters";
 
-interface Van {
+export interface Van {
     id: string;
     name: string;
     price: number;
