@@ -25,7 +25,7 @@ export default function VanDetail() {
             {
                 vanData ? (
                     <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', padding: '15px'}}>
-                        <img src={vanData.imageUrl} alt="van-image" style={{width: '100%', padding: '20px', borderRadius: '25px'}}/>
+                        <img src={vanData.imageUrl} alt="van-image" style={{maxWidth: '500px', padding: '20px', borderRadius: '25px', alignSelf: 'center'}}/>
                         <button className={`van-style ${vanData.type}`}>{vanData.type}</button>
                         <span style={{fontWeight: '700', fontSize: '32px'}}>{vanData.name}</span>
                         <span style={{fontSize: '24px'}}>{`$${vanData.price} /day`}</span>

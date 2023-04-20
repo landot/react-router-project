@@ -26,12 +26,15 @@ h1 {
 
 .about-hero-image {
   max-width: 100%;
+  align-self: center;
 }
 
 .about-page-container {
   padding-inline: 23px;
   color: #161616;
   margin-bottom: 55px;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-page-cta {
