@@ -1,25 +1,23 @@
 import "./server.js"
 import './App.css'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './pages/About';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import Home from './pages/Home';
 import VanDetail from './pages/VanDetail';
 import Vans from './pages/Vans';
+import Layout from "./components/Layout.js";
 
 function App() {
   return (
     <BrowserRouter>
-    <p></p>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
-        <Route path="/vans" element={<Vans />}/>
-        <Route path="/vans/:id" element={<VanDetail />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />}/>
+          <Route path="/about" element={<About />}/>
+          <Route path="/vans" element={<Vans />}/>
+          <Route path="/vans/:id" element={<VanDetail />} />
+        </Route>
       </Routes>
-      <Footer />
     </BrowserRouter>
   )
 }
