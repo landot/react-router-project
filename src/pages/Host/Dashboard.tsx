@@ -1,5 +1,5 @@
 export default function Host() {
     return (
-        <p>asdfasdf host</p>
+        <p>asdfasdf host page</p>
     )
 }
