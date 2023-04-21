@@ -2,7 +2,7 @@
 export default function Footer() {
     return (
         <footer style={{
-            position: 'absolute',
+            position: 'relative',
             width: '100%',
             bottom: '0',
             backgroundColor: '#252525', 
